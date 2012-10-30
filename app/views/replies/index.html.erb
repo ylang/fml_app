@@ -1,0 +1,39 @@
+<p id="notice" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"><%= notice %></p>
+<div id="displayMessageBox" class="messageBox">
+  <p>
+    <b>Title:</b>
+    <%= @message.title %>
+  </p>
+
+  <p>
+    <b>Content:</b>
+    <%= @message.content %>
+  </p>
+
+  <p>
+    <b>Score:</b>
+    <%= @message.score %>
+  </p>
+
+  <%= form_tag(message_replies_url(@message), :content => :attempt) do %>
+      <div class="field">
+        Reply:<br />
+        <%= text_field_tag :attempt %>
+      </div>
+      <div class="submit">
+        <%= submit_tag 'Reply' %>
+      </div>
+  <% end %>
+</div>
+  <div class="messageBox">
+    <% @message.replies.each do |reply| %>
+        <ul>
+          <li>
+            <p></p><%= reply.content %></p>
+            <p class="createdAt">Created At: <%= reply.created_at %></p>
+            <hr>
+          </li>
+        </ul>
+    <% end %>
+  </div>
+<%= link_to 'Back', messages_path %>

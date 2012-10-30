@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+<div id="displayMessageBox" class="messageBox">
+<p>
+  <b>Title:</b>
+  <%= @message.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @message.content %>
+</p>
+
+<p>
+  <b>Challenge question:</b>
+  <%= @message.challenge_question %>
+</p>
+<%= form_tag(delete_path, :params => params.merge(:answer => :attempt)) do %>
+<div class="field">
+  Answer:<br />
+  <%= text_field_tag :attempt %>
+</div>
+<div class="submit">
+    <%= submit_tag 'Delete' %>
+</div>
+<% end %>
+</div>
+<%= link_to 'Back', messages_path %>

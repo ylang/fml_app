@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  content: MyString
+  score: 1
+  challenge_question: MyString
+  anwser: MyString
+
+two:
+  title: MyString
+  content: MyString
+  score: 1
+  challenge_question: MyString
+  anwser: MyString
